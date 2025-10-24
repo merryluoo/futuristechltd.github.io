@@ -186,6 +186,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize network animation
     initNetworkAnimation();
+
+    // Initialize anime.js animations
+    initAnimeAnimations();
 });
 
 // Network Animation
@@ -317,5 +320,119 @@ function initNetworkAnimation() {
     // Cleanup on page unload
     window.addEventListener('beforeunload', () => {
         cancelAnimationFrame(animationFrameId);
+    });
+}
+
+// Anime.js Animations
+function initAnimeAnimations() {
+    // Wait a tiny bit for DOM to be fully ready
+    setTimeout(() => {
+        // Set initial state for hero elements
+        anime.set('.hero-word', {
+            opacity: 0,
+            translateY: 60
+        });
+        
+        anime.set('#hero-subtitle', {
+            opacity: 0,
+            translateY: 40
+        });
+        
+        anime.set('#hero-buttons', {
+            opacity: 0,
+            translateY: 30
+        });
+
+        // Hero title animation - word by word with delay for dramatic effect
+        const heroTimeline = anime.timeline({
+            easing: 'easeOutExpo',
+            autoplay: true
+        });
+
+        heroTimeline
+        .add({
+            targets: '.hero-word',
+            translateY: [60, 0],
+            opacity: [0, 1],
+            duration: 1200,
+            delay: anime.stagger(200), // Each word appears 200ms after the previous
+            easing: 'easeOutExpo'
+        }, 300) // Start after 300ms
+        .add({
+            targets: '#hero-subtitle',
+            translateY: [40, 0],
+            opacity: [0, 1],
+            duration: 1000,
+            easing: 'easeOutExpo'
+        }, '-=600')
+        .add({
+            targets: '#hero-buttons',
+            translateY: [30, 0],
+            opacity: [0, 1],
+            duration: 800,
+            easing: 'easeOutExpo'
+        }, '-=400');
+    }, 100);
+
+    // Hero buttons hover animation
+    const heroButtons = document.querySelectorAll('.hero-btn');
+    heroButtons.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            anime({
+                targets: this,
+                scale: 1.05,
+                duration: 300,
+                easing: 'easeOutElastic(1, .6)'
+            });
+        });
+        
+        btn.addEventListener('mouseleave', function() {
+            anime({
+                targets: this,
+                scale: 1,
+                duration: 300,
+                easing: 'easeOutElastic(1, .6)'
+            });
+        });
+    });
+
+    // Feature cards scroll animation
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const featureObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                entry.target.classList.add('animated');
+                
+                const cards = document.querySelectorAll('.feature-card');
+                anime({
+                    targets: cards,
+                    translateY: [60, 0],
+                    opacity: [0, 1],
+                    duration: 1000,
+                    delay: anime.stagger(100),
+                    easing: 'easeOutExpo'
+                });
+            }
+        });
+    }, observerOptions);
+
+    const featureSection = document.querySelector('.feature-card');
+    if (featureSection) {
+        featureObserver.observe(featureSection);
+    }
+
+    // Add floating animation to feature icons
+    anime({
+        targets: '.feature-card .inline-flex',
+        translateY: [-10, 10],
+        duration: 2000,
+        loop: true,
+        direction: 'alternate',
+        easing: 'easeInOutSine',
+        delay: anime.stagger(200)
     });
 }

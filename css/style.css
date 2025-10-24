@@ -216,3 +216,29 @@ body {
         opacity: 0.3;
     }
 }
+
+/* Anime.js Animation Support */
+.hero-word {
+    display: inline-block;
+    margin: 0 0.15em;
+}
+
+.feature-card {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.feature-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth hover effects */
+.hero-btn {
+    transform-origin: center;
+    will-change: transform;
+}
+
+.feature-card .inline-flex {
+    will-change: transform;
+}

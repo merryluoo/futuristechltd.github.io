@@ -10,6 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -49,17 +50,19 @@
         <!-- Content overlay -->
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-4xl mx-auto">
-                <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight animate-fade-in">
-                    Enterprise Network Solutions
+                <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                    <span class="hero-word">Enterprise</span> 
+                    <span class="hero-word">Network</span> 
+                    <span class="hero-word">Solutions</span>
                 </h1>
-                <p class="text-xl md:text-2xl mb-12 text-blue-100 leading-relaxed">
+                <p id="hero-subtitle" class="text-xl md:text-2xl mb-12 text-blue-100 leading-relaxed">
                     Secure, fast, and reliable connectivity infrastructure for modern businesses
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="inline-block bg-white text-blue-700 px-10 py-4 rounded-lg font-semibold hover:bg-blue-50 transition shadow-lg text-lg">
+                <div id="hero-buttons" class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="hero-btn inline-block bg-white text-blue-700 px-10 py-4 rounded-lg font-semibold hover:bg-blue-50 transition shadow-lg text-lg">
                         Get Started
                     </a>
-                    <a href="#services" class="inline-block border-2 border-white text-white px-10 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition text-lg">
+                    <a href="#services" class="hero-btn inline-block border-2 border-white text-white px-10 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition text-lg">
                         Learn More
                     </a>
                 </div>
@@ -77,7 +80,7 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Feature 1 -->
-                <div class="text-center p-8 rounded-2xl hover:bg-gray-50 transition">
+                <div class="feature-card text-center p-8 rounded-2xl hover:bg-gray-50 transition">
                     <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mb-6">
                         <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
@@ -88,7 +91,7 @@
                 </div>
                 
                 <!-- Feature 2 -->
-                <div class="text-center p-8 rounded-2xl hover:bg-gray-50 transition">
+                <div class="feature-card text-center p-8 rounded-2xl hover:bg-gray-50 transition">
                     <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mb-6">
                         <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -99,7 +102,7 @@
                 </div>
                 
                 <!-- Feature 3 -->
-                <div class="text-center p-8 rounded-2xl hover:bg-gray-50 transition">
+                <div class="feature-card text-center p-8 rounded-2xl hover:bg-gray-50 transition">
                     <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mb-6">
                         <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -110,7 +113,7 @@
                 </div>
                 
                 <!-- Feature 4 -->
-                <div class="text-center p-8 rounded-2xl hover:bg-gray-50 transition">
+                <div class="feature-card text-center p-8 rounded-2xl hover:bg-gray-50 transition">
                     <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mb-6">
                         <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
