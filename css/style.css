@@ -5,11 +5,11 @@ body {
 }
 
 .gradient-bg {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
 }
 
 .gradient-bg-alt {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
 }
 
 .card-hover {
@@ -55,7 +55,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
     color: white;
     font-size: 28px;
     margin: 0 auto 1.5rem;
@@ -66,18 +66,18 @@ body {
     display: inline-flex;
     align-items: center;
     padding: 0.5rem 1rem;
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(30, 64, 175, 0.1);
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #667eea;
+    color: #1e40af;
 }
 
 /* Stats counter */
 .stat-number {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
