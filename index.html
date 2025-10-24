@@ -42,8 +42,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="gradient-bg pt-40 pb-32 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" class="gradient-bg pt-40 pb-32 text-white relative overflow-hidden">
+        <!-- Animated Network Background -->
+        <canvas id="network-canvas" class="absolute inset-0 w-full h-full"></canvas>
+        
+        <!-- Content overlay -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-4xl mx-auto">
                 <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight animate-fade-in">
                     Enterprise Network Solutions

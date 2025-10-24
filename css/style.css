@@ -204,3 +204,15 @@ body {
         white-space: nowrap;
     }
 }
+
+/* Network Animation Canvas */
+#network-canvas {
+    pointer-events: auto;
+    opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+    #network-canvas {
+        opacity: 0.3;
+    }
+}
