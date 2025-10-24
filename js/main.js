@@ -60,9 +60,9 @@ window.addEventListener('scroll', () => {
         const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink?.classList.add('text-purple-600');
+            navLink?.classList.add('text-blue-600');
         } else {
-            navLink?.classList.remove('text-purple-600');
+            navLink?.classList.remove('text-blue-600');
         }
     });
 });
@@ -104,3 +104,83 @@ function animateCounter(element, target) {
         }
     }, 30);
 }
+
+// Cookie Consent Management
+function getCookieConsent() {
+    try {
+        const consent = localStorage.getItem('cookieConsent');
+        if (!consent) return null;
+
+        const consentData = JSON.parse(consent);
+        const expiryDate = new Date(consentData.expiryDate);
+
+        // Check if consent has expired (12 months)
+        if (new Date() > expiryDate) {
+            localStorage.removeItem('cookieConsent');
+            return null;
+        }
+
+        return consentData;
+    } catch (e) {
+        return null;
+    }
+}
+
+function setCookieConsent() {
+    const consentData = {
+        status: 'accepted',
+        consentDate: new Date().toISOString(),
+        expiryDate: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString() // 365 days
+    };
+
+    try {
+        localStorage.setItem('cookieConsent', JSON.stringify(consentData));
+    } catch (e) {
+        console.error('Failed to save cookie consent:', e);
+    }
+}
+
+function hideCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+        banner.classList.add('hidden');
+        // Remove from DOM after animation completes
+        setTimeout(() => {
+            banner.style.display = 'none';
+        }, 300);
+    }
+}
+
+function showCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    if (banner) {
+        banner.style.display = 'block';
+        banner.classList.remove('hidden');
+    }
+}
+
+function checkCookieConsent() {
+    const consent = getCookieConsent();
+
+    if (!consent) {
+        // No consent found or expired, show banner
+        showCookieBanner();
+    } else {
+        // Consent exists and valid, hide banner
+        hideCookieBanner();
+    }
+}
+
+// Initialize cookie banner on page load
+document.addEventListener('DOMContentLoaded', function() {
+    checkCookieConsent();
+
+    // Handle "Got It" button click
+    const acceptButton = document.getElementById('cookie-accept');
+    if (acceptButton) {
+        acceptButton.addEventListener('click', function() {
+            setCookieConsent();
+            hideCookieBanner();
+        });
+    }
+});

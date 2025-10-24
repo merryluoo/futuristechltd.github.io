@@ -190,7 +190,7 @@
                 </section>
 
                 <!-- Cookies -->
-                <section class="mb-8">
+                <section id="cookies-section" class="mb-8">
                     <h2 class="text-2xl font-bold text-gray-900 mb-4">9. Cookies and Tracking Technologies</h2>
                     <p class="text-gray-700 mb-4">
                         Our website uses cookies and similar technologies to enhance your experience. We use:
@@ -200,9 +200,14 @@
                         <li><strong>Analytics Cookies:</strong> To understand how visitors use our website</li>
                         <li><strong>Advertising Cookies:</strong> For Google AdSense (you can opt-out via browser settings)</li>
                     </ul>
-                    <p class="text-gray-700">
+                    <p class="text-gray-700 mb-4">
                         You can control cookies through your browser settings. Note that disabling cookies may affect website functionality.
                     </p>
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                        <p class="text-gray-700">
+                            <strong>Consent:</strong> By continuing to use our website after being presented with the cookie notice, you consent to our use of cookies as described above. You can withdraw your consent at any time by clearing your browser cookies and localStorage.
+                        </p>
+                    </div>
                 </section>
 
                 <!-- International Transfers -->
@@ -299,6 +304,7 @@
                     <h4 class="text-lg font-semibold mb-4">Legal</h4>
                     <ul class="space-y-2">
                         <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="privacy-policy.html#cookies-section" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
                         <li><a href="terms-of-service.html" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
                     </ul>
                 </div>
@@ -312,6 +318,24 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <div class="cookie-banner-container">
+            <div class="cookie-banner-content">
+                <div class="cookie-banner-icon">🍪</div>
+                <div class="cookie-banner-text">
+                    <h4>Cookie Notice</h4>
+                    <p>We use cookies to enhance your browsing experience and serve personalized ads. By continuing to use our website, you consent to our use of cookies.</p>
+                </div>
+            </div>
+            <div class="cookie-banner-actions">
+                <a href="#cookies-section" class="cookie-link">Learn More</a>
+                <a href="privacy-policy.html" class="cookie-link">Privacy Policy</a>
+                <button id="cookie-accept" class="cookie-accept-btn">Got It</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
