@@ -76,33 +76,42 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    /* Slightly increased but finer grain below */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mask-image: radial-gradient(circle at center, transparent, black);
+    /* Optional vignette effect */
 }
 
 .bg-gradient-orb {
     position: fixed;
     border-radius: 50%;
-    filter: blur(80px);
-    /* Increased blur for smoother gradients */
+    filter: blur(100px);
+    /* Increased blur */
     z-index: -2;
-    opacity: 0.4;
+    opacity: 0.5;
+    mix-blend-mode: screen;
+    /* Makes light interact better */
     animation: orb-float 20s infinite ease-in-out alternate;
+    will-change: transform;
+    /* Hint for compositor */
 }
 
 .bg-orb-1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-    top: -100px;
+    width: 800px;
+    /* Larger soft light */
+    height: 800px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, rgba(37, 99, 235, 0) 70%);
+    /* More transparent edge */
+    top: -200px;
     left: -100px;
 }
 
 .bg-orb-2 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
-    bottom: -100px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(8, 145, 178, 0.3) 0%, rgba(8, 145, 178, 0) 70%);
+    bottom: -150px;
     right: -100px;
     animation-delay: -5s;
 }
