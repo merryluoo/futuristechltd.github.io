@@ -128,7 +128,10 @@ function initStatsCounter() {
 }
 
 function animateValue(obj) {
-    const target = parseInt(obj.getAttribute('data-target'));
+    const targetStr = obj.getAttribute('data-target');
+    const isFloat = targetStr.includes('.');
+    const target = parseFloat(targetStr);
+
     if (!target) return;
 
     let startTimestamp = null;
@@ -137,11 +140,25 @@ function animateValue(obj) {
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerHTML = Math.floor(progress * target);
+
+        let current;
+        if (isFloat) {
+            current = (progress * target).toFixed(1);
+        } else {
+            current = Math.floor(progress * target);
+        }
+
+        obj.innerHTML = current;
+
         if (progress < 1) {
             window.requestAnimationFrame(step);
         } else {
-            obj.innerHTML = target + '+';
+            // Smart suffix handling
+            if (targetStr === '99.9') {
+                obj.innerHTML = target;
+            } else {
+                obj.innerHTML = target + '+';
+            }
         }
     };
     window.requestAnimationFrame(step);
