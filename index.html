@@ -1,394 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Futuristech Limited - Enterprise Network Solutions & Secure Connectivity | SaaS Provider">
-    <title>Futuristech Limited - Enterprise Network Solutions & Secure Connectivity</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9394028872449809"
-     crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Futuristech Limited | The Future of Connectivity</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Animation Libs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
-<body class="bg-gray-50">
+<body>
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+    
     <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold gradient-bg bg-clip-text text-transparent">Futuristech Limited</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
-                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition">Services</a>
-                    <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
-                </div>
-                <button id="mobile-menu-button" class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fas fa-cube"></i></span>
+                <span class="logo-text">Futuristech</span>
+            </a>
+            
+            <div class="nav-links desktop-only">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 pt-2 pb-4 space-y-2">
-                <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
-                <a href="#about" class="block py-2 text-gray-700 hover:text-blue-600">About</a>
-                <a href="#services" class="block py-2 text-gray-700 hover:text-blue-600">Services</a>
-                <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
-            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
     <!-- Hero Section -->
-    <section id="home" class="gradient-bg pt-40 pb-32 text-white relative overflow-hidden">
-        <!-- Animated Network Background -->
-        <canvas id="network-canvas" class="absolute inset-0 w-full h-full"></canvas>
-        
-        <!-- Content overlay -->
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-4xl mx-auto">
-                <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                    <span class="hero-word">Enterprise</span> 
-                    <span class="hero-word">Network</span> 
-                    <span class="hero-word">Solutions</span>
+    <section id="home" class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text-wrapper">
+                <div class="badge-pill fade-in-up">
+                    <span class="dot"></span> Next Gen Connectivity
+                </div>
+                <h1 class="hero-title">
+                    <span class="gradient-text reveal-text">Secure.</span>
+                    <span class="gradient-text reveal-text">Fast.</span>
+                    <span class="gradient-text reveal-text">Limitless.</span>
                 </h1>
-                <p id="hero-subtitle" class="text-xl md:text-2xl mb-12 text-blue-100 leading-relaxed">
-                    Secure, fast, and reliable connectivity infrastructure for modern businesses
+                <p class="hero-subtitle fade-in-up">
+                    We build the invisible infrastructure that powers the modern enterprise. 
+                    Military-grade encryption meets light-speed transmission.
                 </p>
-                <div id="hero-buttons" class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="hero-btn inline-block bg-white text-blue-700 px-10 py-4 rounded-lg font-semibold hover:bg-blue-50 transition shadow-lg text-lg">
-                        Get Started
+                <div class="hero-btns fade-in-up">
+                    <a href="#contact" class="btn btn-primary glow-effect">
+                        Get Started <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#services" class="hero-btn inline-block border-2 border-white text-white px-10 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition text-lg">
-                        Learn More
+                    <a href="#services" class="btn btn-secondary glass-btn">
+                        Explore Solutions
                     </a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Features Grid Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why choose our network solutions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Enterprise-grade infrastructure designed for security, performance, and reliability</p>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature 1 -->
-                <div class="feature-card text-center p-8 rounded-2xl hover:bg-gray-50 transition">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mb-6">
-                        <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Enterprise Security</h3>
-                    <p class="text-gray-600">Military-grade encryption protecting your sensitive data</p>
-                </div>
-                
-                <!-- Feature 2 -->
-                <div class="feature-card text-center p-8 rounded-2xl hover:bg-gray-50 transition">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mb-6">
-                        <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lightning Fast</h3>
-                    <p class="text-gray-600">Advanced acceleration for seamless connectivity</p>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="feature-card text-center p-8 rounded-2xl hover:bg-gray-50 transition">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mb-6">
-                        <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">99.9% Uptime</h3>
-                    <p class="text-gray-600">Reliable infrastructure that never stops</p>
-                </div>
-                
-                <!-- Feature 4 -->
-                <div class="feature-card text-center p-8 rounded-2xl hover:bg-gray-50 transition">
-                    <div class="inline-flex items-center justify-center w-20 h-20 bg-blue-100 rounded-2xl mb-6">
-                        <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Global Coverage</h3>
-                    <p class="text-gray-600">Worldwide network for optimal performance</p>
-                </div>
+            <div class="arrow-scroll">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Building the future of secure connectivity</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Futuristech Limited develops advanced network infrastructure and secure connectivity solutions 
-                    that empower businesses to operate safely and efficiently in the digital age.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-12 mb-16">
-                <div class="text-center">
-                    <div class="text-5xl font-bold text-blue-600 mb-3">120+</div>
-                    <div class="text-gray-900 font-semibold text-lg mb-2">Global Locations</div>
-                    <div class="text-gray-600">Worldwide server network</div>
+    <!-- Detailed Features/Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card glass-card hover-lift">
+                    <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
+                    <div class="stat-number" data-target="120">0</div>
+                    <div class="stat-label">Global Nodes</div>
                 </div>
-                <div class="text-center">
-                    <div class="text-5xl font-bold text-blue-600 mb-3">99.9%</div>
-                    <div class="text-gray-900 font-semibold text-lg mb-2">Uptime</div>
-                    <div class="text-gray-600">Reliable infrastructure</div>
+                <div class="stat-card glass-card hover-lift">
+                    <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="stat-number" data-target="99">0</div>
+                    <div class="stat-label">Uptime %</div>
                 </div>
-                <div class="text-center">
-                    <div class="text-5xl font-bold text-blue-600 mb-3">24/7</div>
-                    <div class="text-gray-900 font-semibold text-lg mb-2">Support</div>
-                    <div class="text-gray-600">Always available</div>
+                <div class="stat-card glass-card hover-lift">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="stat-number" data-target="5000">0</div>
+                    <div class="stat-label">Secure Tunnels</div>
                 </div>
-            </div>
-
-            <div class="bg-white rounded-2xl p-12 shadow-sm">
-                <div class="max-w-3xl mx-auto">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Privacy-first approach</h3>
-                    <p class="text-gray-600 mb-4 leading-relaxed text-lg">
-                        Through our cloud-based SaaS platform, we deliver enterprise-grade network solutions 
-                        that prioritize security, privacy, and performance. Our technology stack leverages 
-                        intelligent routing, military-grade encryption, and advanced optimization.
-                    </p>
-                    <p class="text-gray-600 text-sm mt-8 pt-8 border-t border-gray-200">
-                        <strong>Company Number:</strong> 15963689 | <strong>Registered in:</strong> England and Wales
-                    </p>
+                <div class="stat-card glass-card hover-lift">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-text">24/7</div>
+                    <div class="stat-label">Expert Support</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Comprehensive network solutions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Everything your business needs for secure and high-performance connectivity</p>
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core <span class="gradient-text">Technologies</span></h2>
+                <p class="section-desc">Engineered for performance, designed for security.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Secure Connectivity -->
-                <div class="bg-gray-50 p-10 rounded-2xl hover:bg-gray-100 transition">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-xl mb-6">
-                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card glass-card">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-network-wired"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Secure Network Tunneling</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Enterprise-grade encrypted tunneling technology creating secure pathways for your data transmission across public networks.
-                    </p>
+                    <h3>Smart Tunneling</h3>
+                    <p>Proprietary encrypted tunneling protocol that bypasses congestion and ensures data integrity across public networks.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-chevron-right"></i></a>
                 </div>
 
-                <!-- Network Acceleration -->
-                <div class="bg-gray-50 p-10 rounded-2xl hover:bg-gray-100 transition">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-xl mb-6">
-                        <i class="fas fa-bolt text-2xl text-blue-600"></i>
+                <!-- Card 2 -->
+                <div class="service-card glass-card">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Network Acceleration</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Advanced optimization technology that accelerates connection speeds and reduces latency for seamless experiences.
-                    </p>
+                    <h3>Edge Acceleration</h3>
+                    <p>AI-driven routing optimization that reduces latency by up to 40% for critical business applications.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-chevron-right"></i></a>
                 </div>
 
-                <!-- Data Privacy -->
-                <div class="bg-gray-50 p-10 rounded-2xl hover:bg-gray-100 transition">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-xl mb-6">
-                        <i class="fas fa-user-shield text-2xl text-blue-600"></i>
+                <!-- Card 3 -->
+                <div class="service-card glass-card">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <i class="fas fa-user-secret"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Identity Protection</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Advanced privacy technology that anonymizes network traffic and protects digital identities for confidential communications.
-                    </p>
+                    <h3>Identity Shield</h3>
+                    <p>Complete digital footprint masking to protect your corporate assets from surveillance and cyber threats.</p>
+                    <a href="#" class="learn-more">Learn more <i class="fas fa-chevron-right"></i></a>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Enterprise Solutions -->
-                <div class="bg-gray-50 p-10 rounded-2xl hover:bg-gray-100 transition">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-xl mb-6">
-                        <i class="fas fa-building text-2xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Enterprise Solutions</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Customized network infrastructure for organizations requiring secure distributed access and centralized management.
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-wrapper glass-panel">
+                <div class="about-content">
+                    <h2 class="section-title">Who is <span class="gradient-text">Futuristech?</span></h2>
+                    <p class="about-text">
+                        We are a collective of network engineers, security specialists, and futurists dedicated to building the backbone of tomorrow's internet. width, 
+                        cloud-native architecture, and zero-trust security principles guide every solution we deploy.
                     </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Enterprise-grade encryption</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Global rapid-response infrastructure</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Privacy-first architecture</span>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Global Network -->
-                <div class="bg-gray-50 p-10 rounded-2xl hover:bg-gray-100 transition">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-xl mb-6">
-                        <i class="fas fa-globe-americas text-2xl text-blue-600"></i>
+                <div class="about-visual">
+                    <div class="visual-circle circle-1"></div>
+                    <div class="visual-circle circle-2"></div>
+                    <div class="glass-box">
+                        <i class="fas fa-server"></i>
+                        <span>Secure Core</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Global Coverage</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Worldwide network of high-performance servers ensuring reliable connections and optimal performance wherever you are.
-                    </p>
-                </div>
-
-                <!-- 24/7 Support -->
-                <div class="bg-gray-50 p-10 rounded-2xl hover:bg-gray-100 transition">
-                    <div class="inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-xl mb-6">
-                        <i class="fas fa-headset text-2xl text-blue-600"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">24/7 Support</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Round-the-clock technical support and customer service ensuring your operations run smoothly at all times.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Start Your <span class="gradient-text">Transformation</span></h2>
+                <p class="section-desc">Ready to upgrade your infrastructure? Let's talk.</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-envelope text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
-                                <a href="mailto:info@futuristechltd.co.uk" class="text-gray-600 hover:text-blue-600">
-                                    info@futuristechltd.co.uk
-                                </a>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-globe text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">Website</h4>
-                                <a href="https://futuristechltd.co.uk" class="text-gray-600 hover:text-blue-600">
-                                    www.futuristechltd.co.uk
-                                </a>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900 mb-1">Office Address</h4>
-                                <p class="text-gray-600">
-                                    71-75 Shelton Street<br>
-                                    Covent Garden<br>
-                                    London WC2H 9JQ<br>
-                                    United Kingdom
-                                </p>
-                            </div>
+
+            <div class="contact-container glass-panel">
+                <div class="contact-info">
+                    <h3>Get in touch</h3>
+                    <p>Our team is ready to design a custom solution for your enterprise.</p>
+                    
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="label">Email Us</span>
+                            <a href="mailto:info@futuristechltd.co.uk">info@futuristechltd.co.uk</a>
                         </div>
                     </div>
-                    <div class="mt-8">
-                        <h4 class="font-semibold text-gray-900 mb-4">Business Hours</h4>
-                        <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM GMT</p>
-                        <p class="text-gray-600">Saturday - Sunday: Closed</p>
+                    
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <span class="label">HQ Location</span>
+                            <p>71-75 Shelton Street, Covent Garden<br>London WC2H 9JQ, UK</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div>
-                    <form class="space-y-6" id="contact-form">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                            <textarea id="message" name="message" rows="5" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"></textarea>
-                        </div>
-                        <button type="submit"
-                            class="w-full gradient-bg text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required placeholder=" ">
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required placeholder=" ">
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" required placeholder=" "></textarea>
+                        <label for="message">Project Details</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block glow-effect">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Futuristech Limited</h3>
-                    <p class="text-gray-400 mb-3">
-                        Innovative technology solutions for modern businesses.
-                    </p>
-                    <p class="text-gray-500 text-sm">
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon"><i class="fas fa-cube"></i></span>
+                        <span class="logo-text">Futuristech</span>
+                    </div>
+                    <p class="company-reg">
                         Company No. 15963689<br>
                         Registered in England and Wales
                     </p>
                 </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="privacy-policy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="privacy-policy.html#cookies-section" class="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
-                        <li><a href="terms-of-service.html" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <a href="#about">About Us</a>
+                        <a href="#services">Services</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Legal</h4>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                        <a href="privacy-policy.html#cookies">Cookie Policy</a>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-400">
-                    &copy; <span id="current-year"></span> Futuristech Limited. All rights reserved.<br>
-                    Company Number: 15963689. Registered in England and Wales.<br>
-                    Office: 71-75 Shelton Street, Covent Garden, London WC2H 9JQ, United Kingdom.
-                </p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Futuristech Limited. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner hidden">
-        <div class="cookie-banner-container">
-            <div class="cookie-banner-content">
-                <div class="cookie-banner-icon">🍪</div>
-                <div class="cookie-banner-text">
-                    <h4>Cookie Notice</h4>
-                    <p>We use cookies to enhance your browsing experience and serve personalized ads. By continuing to use our website, you consent to our use of cookies.</p>
-                </div>
+        <div class="glass-panel cookie-content">
+            <div class="cookie-text">
+                <i class="fas fa-cookie-bite"></i>
+                <p>We use cookies to ensure you get the best experience on our website.</p>
             </div>
-            <div class="cookie-banner-actions">
-                <a href="privacy-policy.html#cookies-section" class="cookie-link">Learn More</a>
-                <a href="privacy-policy.html" class="cookie-link">Privacy Policy</a>
-                <button id="cookie-accept" class="cookie-accept-btn">Got It</button>
+            <div class="cookie-btns">
+                <button id="cookie-accept" class="btn btn-sm btn-primary">Accept</button>
+                <a href="privacy-policy.html" class="btn btn-sm btn-outline">Learn More</a>
             </div>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>
